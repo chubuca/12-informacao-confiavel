@@ -294,16 +294,33 @@ if (localStorage.length === 0) {
   });
 }
 
-
+var usuarios = [
+  {
+    nome: "admin",
+    senha: "admin",
+    email: "admin@admin.com"
+  },
+  {
+    nome: "teste",
+    senha: "teste",
+    email: "teste@admin.com"
+  },
+]
 
 function login(){
   var nome = document.getElementById("username").value;
   var senha = document.getElementById("password").value;
-  if(nome.value == "admin@gmail.com" && senha.value == "admin"){
-    localStorage.setItem("userlogin",true);
-    alert("Login efetuado com sucesso!");
-    window.location.href = "index.html" ;
-  } else{
+  var teste = false;
+  for( i = 0; i < usuarios.length ; i++){
+    if((nome == usuarios[i].nome || nome == usuarios[i].email) && senha == usuarios[i].senha){
+      localStorage.setItem("userlogin",true);
+      alert("Login efetuado com sucesso!");
+      window.location.href = "index.html" ;
+      teste = true;
+      return;
+    } 
+  }
+  if (teste == false) {
     alert("Inválido");
   }
 }
