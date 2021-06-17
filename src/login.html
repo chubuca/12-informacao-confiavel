@@ -15,6 +15,14 @@
     <link rel="stylesheet" href="styles/style.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="scripts/app.js"></script>
+
+    <script>
+        function addDarkmodeWidget() {
+            new Darkmode().showWidget();
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+
+    </script>
 </head>
 
 <body>
@@ -29,10 +37,10 @@
                     <div class="col-9 menu_area">
                         <nav class="nav nav-pills flex-column flex-sm-row">
                             <a class="flex-sm-fill text-sm-center nav-link" href="index.html">Home</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="login.html">Login</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="buscas.html">Buscas</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="favoritos.html">Favoritos</a>
                             <a class="flex-sm-fill text-sm-center nav-link" href="sobre.html">Sobre</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" href="favoritos.html">Favoritos</a>
+                            <a class="flex-sm-fill text-sm-center nav-link active" href="login.html">Login</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" href="buscas.html">Buscas</a>
                         </nav>
                     </div>
                 </div>
@@ -40,45 +48,47 @@
     </header>
 
     <div id="login">
-        <h3 class="text-center text-white pt-5">Login</h3>
-        <div class="container">
-            <div id="login-row" class="row justify-content-center align-items-center">
-                <div id="login-column" class="col-md-6">
-                    <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
-                            <h3 class="text-center text-info">Login</h3>
-                            <div class="form-group">
-                                <label for="username" class="text-info">Usuário:</label><br>
-                                <input type="text" name="username" id="username" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="text-info">Senha:</label><br>
-                                <input type="password" name="password" id="password" class="form-control" required>
-                            </div>
-                            <div class="form-group d-flex justify-content-between">
-                                <label for="remember-me" class="p-2 text-info"><span>Manter Conectado
-                                    </span> <span><input id="remember-me" name="remember-me"
-                                            type="checkbox"></span></label><br>
-                                <div id="register-link" class="p-2 text-right">
-                                    <a href="cadastro.html" class="text-info">Cadastre aqui</a>
-                                </div>
-                            </div>
-                        </form>
-                        <button onclick="login()" name="submit" class="btn btn-info btn-md">Login</button>
-                    </div>
+        <h1>Faça seu Login</h1>
+        <form id="register-form" action="">
+            <div class="full-box">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="Digite seu e-mail" data-min-length="2"
+                    data-email-validate>
+            </div>
+            <div class="full-box">
+                <label for="lastname">Senha</label>
+                <input type="password" name="password" id="password" placeholder="Digite sua senha"
+                    data-password-validate data-required>
+            </div>
+            <div class="form-group">
+                <label for="remember-me" class="text-info"><span>Manter Conectado </span> <span><input id="remember-me"
+                            name="remember-me" type="checkbox"></span></label><br>
+                <div class="full-box">
+                    <input id="btn-submit" type="enter" value="Entrar">
                 </div>
             </div>
-        </div>
+            <div id="register-link" class="text-right">
+                <a href="cadastro.html" class="text-info">Cadastre aqui</a>
+        </form>
     </div>
 
-    <script src="scripts/app.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/sharer.js/latest/sharer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/sharer.js/latest/sharer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-      crossorigin="anonymous"></script>
+    <script src="scripts/app.js"></script>
+
 
 </body>
 

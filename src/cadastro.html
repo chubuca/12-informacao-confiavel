@@ -15,7 +15,15 @@
     <link rel="stylesheet" href="styles/style.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="scripts/app.js"></script>
-    
+
+    <script>
+        function addDarkmodeWidget() {
+            new Darkmode().showWidget();
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+
+    </script>
+
 </head>
 
 <body>
@@ -30,57 +38,71 @@
                     <div class="col-9 menu_area">
                         <nav class="nav nav-pills flex-column flex-sm-row">
                             <a class="flex-sm-fill text-sm-center nav-link" href="index.html">Home</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="login.html">Login</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="buscas.html">Buscas</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="favoritos.html">Favoritos</a>
                             <a class="flex-sm-fill text-sm-center nav-link" href="sobre.html">Sobre</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" href="favoritos.html">Favoritos</a>
+                            <a class="flex-sm-fill text-sm-center nav-link active" href="login.html">Login</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" href="buscas.html">Buscas</a>
                         </nav>
                     </div>
                 </div>
             </div>
     </header>
-    <div id="register">
-        <h3 class="text-center text-white pt-5">Login form</h3>
-        <div class="container">
-            <div id="register-row" class="row justify-content-center align-items-center">
-                <div id="register-column" class="col-md-6">
-                    <div id="register-box" class="col-md-12">
-                        <form id="register-form" class="form" action="" method="post">
-                            <h3 class="text-center text-info">Cadastro</h3>
-                            <div class="form-group">
-                                <label for="email" class="text-info">E-mail:</label>
-                                <input type="email" name="email" id="email" class="form-control" data-min-length="2" data-email-validate>
-                              </div>
-                            <div class="form-group">
-                                <label for="username" class="text-info">Usuário:</label><br>
-                                <input type="text" name="username" id="username" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="text-info">Senha:</label><br>
-                                <input type="password" name="password" id="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="password-confirm" class="text-info">Confirmação de Senha:</label><br>
-                                <input type="password" name="password-confirm" id="password-confirm"
-                                    class="form-control">
-                            </div>
-                        
-                        </form>
-                        <button onclick="cadastro()" class="btn btn-info btn-md">Cadastro</button>
-                    </div>
-                </div>
+
+    <div id="main-container">
+        <h1>Cadastre-se para acessar o sistema</h1>
+        <form id="register-form" action="">
+            <div class="full-box">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="Digite seu e-mail" data-min-length="2"
+                    data-email-validate>
             </div>
-        </div>
+            <div class="half-box spacing">
+                <label for="name">Nome</label>
+                <input type="text" name="name" id="name" placeholder="Digite seu nome" data-required data-min-length="3"
+                    data-max-length="16">
+            </div>
+            <div class="half-box">
+                <label for="lastname">Sobrenome</label>
+                <input type="text" name="lastname" id="lastname" placeholder="Digite seu sobrenome" data-required
+                    data-only-letters>
+            </div>
+            <div class="half-box spacing">
+                <label for="lastname">Senha</label>
+                <input type="password" name="password" id="password" placeholder="Digite sua senha"
+                    data-password-validate data-required>
+            </div>
+            <div class="half-box">
+                <label for="passconfirmation">Confirmação de senha</label>
+                <input type="password" name="passconfirmation" id="passwordconfirmation"
+                    placeholder="Digite novamente sua senha" data-equal="password">
+            </div>
+            <div>
+                <input type="checkbox" name="agreement" id="agreement">
+                <label for="agreement" id="agreement-label">Eu li e aceito os <a href="#">termos de uso</a></label>
+            </div>
+            <div class="full-box">
+                <input id="btn-submit" type="submit" value="Registrar">
+            </div>
+        </form>
     </div>
-    
-    <script src="scripts/app.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/sharer.js/latest/sharer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/sharer.js/latest/sharer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-      crossorigin="anonymous"></script>
+    <script src="scripts/app.js"></script>
+
 </body>
 
 </html>
