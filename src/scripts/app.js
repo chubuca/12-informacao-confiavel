@@ -334,7 +334,7 @@ function cadastro() {
 }
 
 function login() {
-  let nome = document.getElementById("username").value;
+  let nome = document.getElementById("email").value;
   let senha = document.getElementById("password").value;
   let teste = false;
   for (i = 0; i < usuarios.length; i++) {
@@ -343,8 +343,8 @@ function login() {
       senha == usuarios[i].senha
     ) {
       localStorage.setItem("userlogin", true);
-      alert("Login efetuado com sucesso!");
       window.location.href = "index.html";
+      alert("Login efetuado com sucesso!");
       teste = true;
       return;
     }

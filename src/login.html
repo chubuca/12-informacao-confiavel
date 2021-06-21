@@ -37,10 +37,10 @@
                     <div class="col-9 menu_area">
                         <nav class="nav nav-pills flex-column flex-sm-row">
                             <a class="flex-sm-fill text-sm-center nav-link" href="index.html">Home</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="sobre.html">Sobre</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" href="favoritos.html">Favoritos</a>
                             <a class="flex-sm-fill text-sm-center nav-link active" href="login.html">Login</a>
                             <a class="flex-sm-fill text-sm-center nav-link" href="buscas.html">Buscas</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" href="favoritos.html">Favoritos</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" href="sobre.html">Sobre</a>
                         </nav>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
 
     <div id="login">
         <h1>Faça seu Login</h1>
-        <form id="register-form" action="">
+        <form id="register-form">
             <div class="full-box">
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" placeholder="Digite seu e-mail" data-min-length="2"
@@ -64,7 +64,7 @@
                 <label for="remember-me" class="text-info"><span>Manter Conectado </span> <span><input id="remember-me"
                             name="remember-me" type="checkbox"></span></label><br>
                 <div class="full-box">
-                    <input id="btn-submit" type="enter" value="Entrar">
+                    <button id="btn-submit" onclick="login()">  Entrar  </button>
                 </div>
             </div>
             <div id="register-link" class="text-right">
