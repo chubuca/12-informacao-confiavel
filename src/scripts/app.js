@@ -31,57 +31,74 @@ function renderizaElementos() {
         webpage.reputation.ui +
         webpage.reputation.partiality;
 
-      resultado_container.append(
-        `<div class='resultado' id='${key}'>` +
-          `<img id='icon-feedback' src='' pontuacao='${reputation}'>` +
-          "<div class='texto-resultado'>" +
-          `<a href='${webpage.url}' class='dominio'>` +
-          `<h1 class='titulo'>${webpage.name}</h1>` +
-          "</a>" +
-          `<p class='not'>${webpage.description}</p>` +
-          "</div>"
-      );
-      resultado_container.append(
-        //Favorito
-        `<svg class='fav-icon' id="fav-icon-${key}" onclick='setFav("${key}")' version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 19.481 19.481">` +
-          `<g>` +
-          `<path d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z"/>` +
-          `</g>` +
-          `</svg>`
-      );
+      resultado_container.append(`
+        <div class='resultado row' id='${key}'>
+          <div class="col">
+            <img id='icon-feedback' pontuacao='${reputation}'>
+            <div class='texto-resultado'>
+              <a href='${webpage.url}' class='dominio'>
+                <h1 class='titulo'>${webpage.name}</h1>
+              </a>
+              <p class='not'>${webpage.description}</p>
+          </div>
+
+          <div class="col" id="buttons-container">
+            <div class="row">
+              ${"<!-- Favorito -->"}
+              <div class="col">
+                <svg class='fav-icon ' 
+                    id="fav-icon-${key}"
+                    onclick='setFav("${key}")'
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 19.481 19.481"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    enable-background="new 0 0 19.481 19.481">
+                  <g>
+                    <path d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,
+                            0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,
+                            0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545
+                            2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z"/>
+                  </g>
+                </svg>
+              </div>
+
+              ${"<!--Dropdown Container -->"}
+              <div class='col' id='dropdown-container'>
+                <button class='btn btn-secondary dropdown-toggle like' type='button' id='dropdownMenuButton1'
+                  data-bs-toggle='dropdown' aria-expanded='false'>
+                  Gostei
+                </button>
+
+                ${"<!-- Dropdown Avaliações positivas -->"}
+                <ul class='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
+                  <li><a onClick='changeReputation("${key}", 1)' class='dropdown-item' href='#'>Design agradável</a></li>
+                  <li><a onClick='changeReputation("${key}", 2)' class='dropdown-item' href='#'>Informativo</a></li>
+                  <li><a onClick='changeReputation("${key}", 3)' class='dropdown-item' href='#'>Interface Intuitiva</a></li>
+                  <li><a onClick='changeReputation("${key}", 4)' class='dropdown-item' href='#'>Imparcialidade</a></li>
+                </ul>
+                
+                ${"<!--Dropdown Avaliações Negativas -->"}
+                <button class='btn btn-secondary dropdown-toggle dislike' type='button' id='dropdownMenuButton1'
+                  data-bs-toggle='dropdown' aria-expanded='false'>
+                  Não gostei
+                </button>
+                <ul class='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
+                  <li><a onClick='changeReputation("${key}", -1)' class='dropdown-item' href='#'>Poluição visual</a></li>
+                  <li><a onClick='changeReputation("${key}", -2)' class='dropdown-item' href='#'>Informações falsas</a></li>
+                  <li><a onClick='changeReputation("${key}", -3)' class='dropdown-item' href='#'>Interface confusa</a></li>
+                  <li><a onClick='changeReputation("${key}", -4)' class='dropdown-item' href='#'>Conteúdo muito parcial</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      `);
       if (webpage.fav == true) {
         let svg = $(`#fav-icon-${key}`);
         svg.addClass("fav-icon-true");
       }
 
-      resultado_container.append(
-        //Comeco dos botões de avaliação
-        "<div class='dropdown'>" +
-          "<button class='btn btn-secondary dropdown-toggle like' type='button' id='dropdownMenuButton1' data-bs-toggle='dropdown' aria-expanded='false'>" +
-          "Gostei" +
-          "</button>" +
-          //DropDown Avaliações Positivas
-          "<ul class='dropdown-menu' aria-labelledby='dropdownMenuButton1'>" +
-          `<li><a onClick='changeReputation("${key}", 1)' class='dropdown-item' href='#'>Design agradável</a></li>` +
-          `<li><a onClick='changeReputation("${key}", 2)' class='dropdown-item' href='#'>Informativo</a></li>` +
-          `<li><a onClick='changeReputation("${key}", 3)' class='dropdown-item' href='#'>Interface Intuitiva</a></li>` +
-          `<li><a onClick='changeReputation("${key}", 4)' class='dropdown-item' href='#'>Imparcialidade</a></li>` +
-          "</ul>" +
-          "</div>" +
-          //DropDown Avaliações Negativas
-          "<div class='dropdown'>" +
-          "<button class='btn btn-secondary dropdown-toggle dislike' type='button' id='dropdownMenuButton1' data-bs-toggle='dropdown' aria-expanded='false'>" +
-          "Não gostei" +
-          "</button>" +
-          "<ul class='dropdown-menu' aria-labelledby='dropdownMenuButton1'>" +
-          `<li><a onClick='changeReputation("${key}", -1)' class='dropdown-item' href='#'>Poluição visual</a></li>` +
-          `<li><a onClick='changeReputation("${key}", -2)' class='dropdown-item' href='#'>Informações falsas</a></li>` +
-          `<li><a onClick='changeReputation("${key}", -3)' class='dropdown-item' href='#'>Interface confusa</a></li>` +
-          `<li><a onClick='changeReputation("${key}", -4)' class='dropdown-item' href='#'>Conteúdo muito parcial</a></li>` +
-          "</ul>" +
-          "</div>" +
-          "</div>"
-      );
       let element = "#" + key + " #icon-feedback";
 
       if (reputation < 0) {
@@ -215,95 +232,99 @@ function showFavorites() {
         webpage.reputation.ui +
         webpage.reputation.partiality;
 
-      favorites_container.append(
-        `<div class='resultado' id='${key}'>
-            <img id='icon-feedback' src='' pontuacao='${reputation}'>
+      favorites_container.append(`
+        <div class='resultado row' id='${key}'>
+          <div class="col">
+            <img id='icon-feedback' pontuacao='${reputation}'>
             <div class='texto-resultado'>
-                <a href='${webpage.url}' class='dominio'>
-                    <h1 class='titulo'>${webpage.name}</h1>
-                </a>
-                <p class='not'>${webpage.description}</p>
-            </div>
-            <g>
-                <path
-                    d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545 2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z" />
-            </g>
-            </svg>
-            <div class='dropdown'>
-                <button class='btn btn-secondary dropdown-toggle like' type='button' id='dropdownMenuButton1'
-                    data-bs-toggle='dropdown' aria-expanded='false'>
-                    Gostei
-                </button>
-                <ul class='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
-                    <li><a onClick='changeReputation("${key}", 1)' class='dropdown-item' href='#'>Design agradável</a></li>
-                    <li><a onClick='changeReputation("${key}", 2)' class='dropdown-item' href='#'>Informativo</a></li>
-                    <li><a onClick='changeReputation("${key}", 3)' class='dropdown-item' href='#'>Interface Intuitiva</a></li>
-                    <li><a onClick='changeReputation("${key}", 4)' class='dropdown-item' href='#'>Imparcialidade</a></li>
-                </ul>
-            </div>
-            <div class='dropdown'>
-                <button class='btn btn-secondary dropdown-toggle dislike' type='button' id='dropdownMenuButton1'
-                    data-bs-toggle='dropdown' aria-expanded='false'>
-                    Não gostei
-                </button>
-                <ul class='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
-                    <li><a onClick='changeReputation("${key}", -1)' class='dropdown-item' href='#'>Poluição visual</a></li>
-                    <li><a onClick='changeReputation("${key}", -2)' class='dropdown-item' href='#'>Informações falsas</a></li>
-                    <li><a onClick='changeReputation("${key}", -3)' class='dropdown-item' href='#'>Interface confusa</a></li>
-                    <li><a onClick='changeReputation("${key}", -4)' class='dropdown-item' href='#'>Conteúdo muito parcial</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div>
-          <h4>Share</h4>
-          <div class="social">
-              <a 
-                href="www.facebook.com/sharer/sharer.php?u=${
-                  window.location.href
-                }&title=${
-          webpage.name
-        }%20tem%20nota%20${reputation}%20de%20confiabilididade" 
-                id="share-fb" class="sharer button"><i class="fa fa-2x fa-facebook-square"></i>
+              <a href='${webpage.url}' class='dominio'>
+                <h1 class='titulo'>${webpage.name}</h1>
               </a>
-              <a 
-                href="http://twitter.com/intent/tweet?original_referer=${
-                  window.location.href
-                }&text=${
-          webpage.name
-        }%20tem%20nota%20${reputation}%20de%20confiabilididade&url=${
-          window.location.href
-        }" 
-                id="share-tw" 
-                class="sharer button">
-                  <i class="fa fa-2x fa-twitter-square"></i>
-                </a>
-              <a 
-                href="http://www.linkedin.com/shareArticle?mini=true&url=${
-                  window.location.href
-                }&&title=${
-          webpage.name
-        }%20tem%20nota%20${reputation}%20de%20confiabilididade&source=${$(
-          location
-        ).attr("hostname")}&"
-                id="share-li"
-                class="sharer
-                button">
-                  <i class="fa fa-2x fa-linkedin-square"></i>
-              </a>
-              <a 
-                href="mailto:?subject=Reputacao%20do%20site%20${
-                  webpage.name
-                }&body=${
-          webpage.name
-        }%20tem%20nota%20${reputation}%20de%20confiabilididade"
-                id="share-em"
-                class="sharer button">
-                  <i class="fa fa-2x fa-envelope-square"></i>
-              </a>
+              <p class='not'>${webpage.description}</p>
           </div>
-        </div>`
-      );
+
+          <div class="col" id="buttons-container">
+            <div class="row">
+              ${"<!-- Favorito -->"}
+              <div class="col">
+                <svg class='fav-icon ' 
+                    id="fav-icon-${key}"
+                    onclick='setFav("${key}")'
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 19.481 19.481"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    enable-background="new 0 0 19.481 19.481">
+                  <g>
+                    <path d="m10.201,.758l2.478,5.865 6.344,.545c0.44,0.038 0.619,0.587 0.285,
+                            0.876l-4.812,4.169 1.442,6.202c0.1,0.431-0.367,0.77-0.745,0.541l-5.452-3.288-5.452,3.288c-0.379,
+                            0.228-0.845-0.111-0.745-0.541l1.442-6.202-4.813-4.17c-0.334-0.289-0.156-0.838 0.285-0.876l6.344-.545
+                            2.478-5.864c0.172-0.408 0.749-0.408 0.921,0z"/>
+                  </g>
+                </svg>
+
+                <div>
+                  <h4>Share</h4>
+                  <div class="social">
+                      <a 
+                        href="www.facebook.com/sharer/sharer.php?u=${window.location.href}&title=${webpage.name}%20tem%20nota%20${reputation}%20de%20confiabilididade" 
+                        id="share-fb" class="sharer button"><i class="fa fa-2x fa-facebook-square"></i>
+                      </a>
+                      <a 
+                        href="http://twitter.com/intent/tweet?original_referer=${window.location.href}&text=${webpage.name}%20tem%20nota%20${reputation}%20de%20confiabilididade&url=${window.location.href}" 
+                        id="share-tw" 
+                        class="sharer button">
+                          <i class="fa fa-2x fa-twitter-square"></i>
+                        </a>
+                      <a 
+                        href="http://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}&title=${webpage.name}%20tem%20nota%20${reputation}%20de%20confiabilididade&source=${$(location).attr("hostname")}&"
+                        id="share-li"
+                        class="sharer
+                        button">
+                          <i class="fa fa-2x fa-linkedin-square"></i>
+                      </a>
+                      <a 
+                        href="mailto:?subject=Reputacao%20do%20site%20${webpage.name}&body=${webpage.name}%20tem%20nota%20${reputation}%20de%20confiabilididade"
+                        id="share-em"
+                        class="sharer button">
+                          <i class="fa fa-2x fa-envelope-square"></i>
+                      </a>
+                  </div>
+                </div>
+
+              </div>
+
+              ${"<!--Dropdown Container -->"}
+              <div class='col' id='dropdown-container'>
+                <button class='btn btn-secondary dropdown-toggle like' type='button' id='dropdownMenuButton1'
+                  data-bs-toggle='dropdown' aria-expanded='false'>
+                  Gostei
+                </button>
+
+                ${"<!-- Dropdown Avaliações positivas -->"}
+                <ul class='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
+                  <li><a onClick='changeReputation("${key}", 1)' class='dropdown-item' href='#'>Design agradável</a></li>
+                  <li><a onClick='changeReputation("${key}", 2)' class='dropdown-item' href='#'>Informativo</a></li>
+                  <li><a onClick='changeReputation("${key}", 3)' class='dropdown-item' href='#'>Interface Intuitiva</a></li>
+                  <li><a onClick='changeReputation("${key}", 4)' class='dropdown-item' href='#'>Imparcialidade</a></li>
+                </ul>
+                
+                ${"<!--Dropdown Avaliações Negativas -->"}
+                <button class='btn btn-secondary dropdown-toggle dislike' type='button' id='dropdownMenuButton1'
+                  data-bs-toggle='dropdown' aria-expanded='false'>
+                  Não gostei
+                </button>
+                <ul class='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
+                  <li><a onClick='changeReputation("${key}", -1)' class='dropdown-item' href='#'>Poluição visual</a></li>
+                  <li><a onClick='changeReputation("${key}", -2)' class='dropdown-item' href='#'>Informações falsas</a></li>
+                  <li><a onClick='changeReputation("${key}", -3)' class='dropdown-item' href='#'>Interface confusa</a></li>
+                  <li><a onClick='changeReputation("${key}", -4)' class='dropdown-item' href='#'>Conteúdo muito parcial</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      `);
 
       let element = "#" + key + " #icon-feedback";
 
@@ -538,10 +559,8 @@ submit.addEventListener("click", function (e) {
   validator.validate(form);
 });
 
-if (localStorage.length === 0) {
-  $.getJSON("db/db.json", function (data) {
-    data.forEach((webpage, index) => {
-      localStorage.setItem(`webpage_${index}`, JSON.stringify(webpage));
-    });
+$.getJSON("db/db.json", function (data) {
+  data.forEach((webpage, index) => {
+    localStorage.setItem(`webpage_${index}`, JSON.stringify(webpage));
   });
-}
+});
