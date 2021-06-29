@@ -1,27 +1,31 @@
-/* CSS do Template*/
+/*-----------Geral-----------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+  color: #323232;
+  border: none;
+}
 
+/*-----------Header-----------*/
 .logo {
   width: 280px;
-  margin-top: 10px;
-  margin-left: 30px;
 }
+
 .header {
   background: rgb(29, 31, 56);
-  margin-bottom: 20px;
+  margin-bottom: 2%;
 }
 .header_area {
-  padding: 20px;
-}
-.menu_area {
-  margin-top: 30px;
-  margin-left: -30px;
+  padding: 1% 2%;
 }
 .menu_area nav a {
   background-color: #08067c;
   color: white;
 }
 .nav-link {
-  margin-inline: 10px;
+  margin: 0 2%;
 }
 .form-control {
   margin-left: 10px;
@@ -34,16 +38,6 @@
 }
 .card {
   margin-top: 30px;
-}
-
-/* Geral */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Helvetica, sans-serif;
-  color: #323232;
-  border: none;
 }
 
 input,
@@ -63,24 +57,23 @@ label {
   padding: 25px;
 }
 
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 #main-container h1 {
   text-align: center;
   margin-bottom: 25px;
   font-size: 1.6rem;
 }
+
 .dropdown-toggle {
   background-color: rgb(2, 6, 56);
 }
 
-#dropdown-container{
-  width: 10%;
-  height: 20%;
-}
-
-#dropdown-container > button {
-  width: 50%;
-  margin-top: 4%;
-}
+/*-----------Busca-----------*/
 
 .resultado{
   width: 100%;
@@ -96,18 +89,6 @@ label {
 .tags {
   color: blue;
 }
-.cardNot {
-  height: 550px;
-}
-
-#login-box,
-#register-box {
-  padding: 5%;
-  border: 1px solid #9c9c9c;
-  background-color: #eaeaea;
-}
-
-/*-----------Busca-----------*/
 
 /* Botoes like dislike */
 .like {
@@ -126,7 +107,20 @@ label {
 .fav-icon-true {
   fill: yellow !important;
 }
+/* Dropdown container */
 
+#dropdown-container{
+  width: 10%;
+  height: 20%;
+}
+#dropdown-container > button {
+  width: 50%;
+  margin-top: 4%;
+}
+
+.cardNot {
+  height: 550px;
+}
 
 label {
   font-weight: bold;
@@ -149,6 +143,40 @@ label {
 
 .cardNot {
   height: 550px;
+}
+
+
+/*-----------Login/Register-----------*/
+
+#login-box,
+#register-box {
+  padding: 5%;
+  border: 1px solid #9c9c9c;
+  background-color: #eaeaea;
+}
+
+#login {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 25px;
+}
+#login h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+}
+
+#remember-me {
+  margin-right: 5px;
+}
+
+#remember-me,
+#remember-me-label {
+  display: inline-block;
+  width: auto;
 }
 
 input {
@@ -180,12 +208,6 @@ input[type="submit"] {
   height: 40px;
 }
 
-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 #agreement {
   margin-right: 5px;
 }
@@ -206,30 +228,6 @@ form {
 .template {
   display: none;
 }
-/*css do login*/
-#login {
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 25px;
-}
-#login h1 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 1.6rem;
-}
-
-#remember-me {
-  margin-right: 5px;
-}
-
-#remember-me,
-#remember-me-label {
-  display: inline-block;
-  width: auto;
-}
 
 input[type="enter"] {
   background-color: #200d75;
@@ -239,4 +237,15 @@ input[type="enter"] {
   height: 40px;
   cursor: pointer;
   text-align: center;
+}
+
+@media (max-width: 1024px)
+{
+  .logo{
+    width: 150px;
+   }
+}
+
+@media (max-width: 768px){
+
 }
