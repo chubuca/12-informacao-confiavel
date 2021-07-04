@@ -1,48 +1,48 @@
-# Template de Projeto
+# Grupo 12 - Informação Confiável (Rotten Info)   
 
-Este é um repositório _template_ que tem como principal objetivo
-fornecer uma estrutura inicial para projetos da disciplina _Trabalho
-Interdisciplina - Aplicações Web_ da PUC Minas.
+![rotten info](https://i.imgur.com/aARQhdV.png)
 
-Aqui você encontrará orientações de como estruturar o projeto e
-desenvolver seus respectivos artefatos.
+### Seja bem vindo ao Github de Rotten Info!
+
+Este é um repositório que tem como principal objetivo
+fornecer acesso ao projeto de trabalho do **Grupo 12: Informação Confiável**,
+da disciplina _Trabalho Interdisciplinar - Aplicações Web_, 
+1º período de Ciências da Computação da PUC Minas.
+
+## O que é o `Rotten Info`?
+
+O site criado pelo nosso grupo, Rotten Info, possui como principal objetivo 
+oferecer uma alternativa contra as Fake News, permitindo ao usuário 
+avaliar sites em relação à veracidade da informação apresentada.
+
+>Documentação do Projeto: [`Projeto.md`](docs/Projeto.md)
 
 # Estrutura de Diretórios
 
-Este _template_ adota a seguinte estrutura de diretórios:
 
-- `docs`
-  - `images`
-- `src`
-  - `assets`
-  - `scripts`
-  - `styles`
-  - `vendor`
+- [`docs`](/docs)
+  - [`images`](/docs/images)
+- [`src`](/src)
+  - [`assets`](/src/assets)
+  - [`db`](/src/db)
+  - [`scripts`](/src/scripts)
+  - [`styles`](/src/styles)
 
-> O grupo é livre para alterar a estrutura proposta. No entanto, nesse
-> caso, o arquivo `README.md` deve ser devidamente modificado para
-> detalhar a nova estrutura e onde cada um dos artefatos produzidos
-> estão localizados.
+## `docs`
 
-## docs
+Esta pasta arquiva a documentação do projeto, sendo que o arquivo
+[`Projeto.md`](docs/Projeto.md) é o documento principal, concentrando
+toda a informação do nosso projeto.
 
-Esta pasta arquiva a documentação dos projetos, sendo que o arquivo
-[`Projeto.md`](docs/Projeto.md) deve ser utilizado como documento principal, que concentra
-toda a informação do projeto em questão.
-
-Este _template_ fornece detalhes de todos os itens que o arquivo
-`Projeto.MD` deve conter, bem como orientações gerais de como os itens
-podem ser desenvolvidos.
-
-Na pasta `docs`, há uma subpasta `images` que deve arquivar todas as
+Na pasta `docs`, há uma subpasta `images` que possui em arquivo todas as
 imagens utilizadas para a elaboração do documento [`Projeto.md`](docs/Projeto.md).
 
-A presentação do projeto, deve ser entregue à parte em formato `pdf` e
-podem devem ser colocada no diretório `docs`.
+>NOTA: A presentação do projeto, deve ser entregue à parte em formato `pdf` e
+>podem devem ser colocada no diretório `docs`.
 
 ## src
 
-Este diretório armazena o código fonte do projeto e adota uma hierarquia
+Este diretório armazena o código fonte do nosso projeto e adota uma hierarquia
 básica de projetos Web simples, que utilizam as tecnologias HTML, CSS e
 JavaScript:
 
