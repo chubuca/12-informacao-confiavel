@@ -1,33 +1,20 @@
 # Introdução
 
+Cada dia que passa, a informação tem se tornado o ativo mais importante na vida de pessoas e das organizações. Informações precisas, imparciais e obtidas no momento exato são fundamentais para se orientar nesse mundo de grandes incertezas.
+
+Em paralelo, tem-se observado um movimento em todo o mundo de resgate do nacionalismo e isso tem acirrado as discussões entre correntes de pensamento antagônicos. Diversos movimentos radicais têm surgido em diferentes regiões do mundo e, de maneira cada vez mais frequente, têm se utilizado dos canais de informação através de notícias falsas para arrebanhar novos simpatizantes. Ao mesmo tempo, alguns meios de comunicação menos confiáveis, acabam adotando um editorial que limitam o perfil de notícias apresentadas, o comprometendo o universo de informação visualizado por seus usuários.
+
+Diante disso, torna-se fundamental a existência de mecanismos que permitam ao usuário acessar um conteúdo diverso e sem vieses que limitem a sua condição de se informar de maneira adequada diante dos fatos que acontecem no mundo.
+
 ## Problema
-> Nesse momento você deve apresentar o problema que a sua aplicação deve
-> resolver. No entanto, não é a hora de comentar sobre a aplicação.
-> Descreva também o contexto em que essa aplicação será usada, se
-> houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de
-> fato existir, pois ainda não é a hora de apresentar requisitos
-> detalhados ou projetos.
->
-> Nesse momento, o grupo pode optar por fazer uso
-> de ferramentas como Design Thinking, que permite um olhar de ponta a
-> ponta para o problema.
->
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+>A partir da análise da pesquisa realizada pelo grupo assim como o resultado apresentado pelo exposto, é visível que as pessoas buscam, cada vez mais, encontrar informações com alto índice de confiabilidade e segurança, fugindo de informações tendenciosas e de informações de fontes não seguras. Porém, alcançar informações neste nível de segurança é algo muito complexo e trabalhoso, com isso surge a ideia do trabalho oferecido pelo grupo.
 
 ## Objetivos
-
-> Aqui você deve descrever os objetivos do trabalho indicando que o
-> objetivo geral é desenvolver um software para solucionar o problema
-> apresentado acima. Apresente também alguns (pelo menos 2) objetivos
-> específicos dependendo de onde você vai querer concentrar a sua
-> prática investigativa, ou como você vai aprofundar no seu trabalho.
-> 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
-
+>O objetivo geral deste trabalho é a criação de um site que apresente ferramentas de fácil uso e que assim possibilite categorizar as fontes de informação na web como blogs, sites de notícia e sites de informação.
+>
+>Como objetivos específicos, podemos ressaltar:   
+>* Interagir e avaliar diversas centrais de notícias espalhadas na Internet;
+>* Possibilitar que não só os usuários se favorecerão do nosso trabalho mas também os donos dos sites avaliados que podem usar das analizes do usuários para melhorar seus sites 
 ## Justificativa
 
 > Descreva a importância ou a motivação para trabalhar com esta aplicação
