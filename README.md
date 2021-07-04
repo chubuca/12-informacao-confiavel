@@ -28,33 +28,40 @@ avaliar sites em relação à veracidade da informação apresentada.
   - [`scripts`](/src/scripts)
   - [`styles`](/src/styles)
 
-## `docs`
+## [`docs`](/docs)
 
 Esta pasta arquiva a documentação do projeto, sendo que o arquivo
 [`Projeto.md`](docs/Projeto.md) é o documento principal, concentrando
 toda a informação do nosso projeto.
 
-Na pasta `docs`, há uma subpasta `images` que possui em arquivo todas as
+Na pasta [`docs`](/docs), há uma subpasta [`images`](/docs/images) que possui em arquivo todas as
 imagens utilizadas para a elaboração do documento [`Projeto.md`](docs/Projeto.md).
 
->NOTA: A presentação do projeto, deve ser entregue à parte em formato `pdf` e
->podem devem ser colocada no diretório `docs`.
+>NOTA: A presentação do projeto, deve ser entregue à parte em formato **pdf** e
+>podem devem ser colocada no diretório [`docs`](/docs).
 
-## src
+## [`src`](/src)
 
 Este diretório armazena o código fonte do nosso projeto e adota uma hierarquia
 básica de projetos Web simples, que utilizam as tecnologias HTML, CSS e
-JavaScript:
+JavaScript. Podem ser observados nesse diretório:
 
-- O diretório `assets` é utilizado para armazenar imagens, fontes e
-  outros recursos utilizados no projeto.
-- O diretório `scripts` armazena os arquivos JavaScripts do projeto
-- O diretório `styles` é utilizado para os arquivos CSS
-- o diretório `vendor` é reservado para incluir bibliotecas e frameworks
-  utilizados no projeto como Bootstrap, jQuery, etc.
+#### HTML
+- O arquivo [**index**](/src/index.html) referente a página principal (ou Home) do projeto;
+- O arquivo [**favoritos**](/src/favoritos.html) referente a página de sites favoritos;
+- O arquivo [**buscas**](/src/buscas.html) referente a página de pesquisas;
+- O arquivo [**cadastro**](/src/cadastro.html) referente a página de cadastro;
+- O arquivo [**login**](/src/login.html) referente a página de login;
+- O arquivo [**sobre**](/src/sobre.html) referente a página sobre o grupo.
 
-# Orientações Gerais Sobre o Projeto
+#### Imagens
+- O diretório [`assets`](/src/assets) é utilizado para armazenar imagens, fontes e
+  outros recursos utilizados no projeto;
+  
 
-- Aprenda Markdown e Use-o para Documentar o Projeto ([link
-  1](https://guides.github.com/features/mastering-markdown/) | [link
-  2](https://help.github.com/pt/github/writing-on-github/getting-started-with-writing-and-formatting-on-github))
+#### JavaScript
+- O diretório [`db`](/src/db) é utilizado para arquivos JSON;
+- O diretório [`scripts`](/src/scripts) armazena os arquivos JavaScripts do projeto;
+
+#### CSS
+- O diretório [`styles`](/src/styles) é utilizado para os arquivos CSS.
