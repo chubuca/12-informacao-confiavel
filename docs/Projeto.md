@@ -1,19 +1,21 @@
 # Informações do Projeto
-`TÍTULO DO PROJETO`  
+`TÍTULO DO PROJETO:`  **Rotten Info**
 
-Trabalho Interdisciplinar - Aplicacões Web
+`MATÉRIA:` **Trabalho Interdisciplinar - Aplicacões Web**
 
-`CURSO`
+`CURSO:` **Ciência da Computação**
 
-`SEMESTRE`
+`SEMESTRE:` **1º Período**
 
 ## Participantes
 
 Os membros do grupo são: 
-- Fulano da Silva
-- Ciclano Albuquerque
-
-> Inclua a lista dos membros da equipe com seus nomes completos.
+- Davi Augusto Freitas Da Silveira
+- José Fernando Rossi Júnior
+- Luca Ribeiro Schettino Regne
+- Lucas De Paula Vieira Santos
+- Pedro Henrique Galvão Paschoal
+- Priscila Goulart Carvalho
 
 # Estrutura do Documento
 
